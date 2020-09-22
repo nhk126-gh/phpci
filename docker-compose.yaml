@@ -7,9 +7,25 @@ services:
     depends_on:
       - app
     volumes:
-      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
       - .:/var/www/html
   app:
-    build: .
+    build: ./docker/php
     volumes:
       - .:/var/www/html
+    depends_on:
+      - pgsql
+  pgsql:
+    build: ./docker/pgsql
+    ports:
+      - "54321:5432"
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD
+      - POSTGRES_USER
+      - POSTGRES_DB
+  pgsql-data:
+    image: busybox
+volumes:
+  pgsql-data:
