@@ -1,0 +1,21 @@
+p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.thrd{
+  border-radius:15px;
+  margin:5px 0;
+  padding:5px;
+}
+.thr1{
+  background-color:cyan;
+}
+.thr2{
+  background-color:pink;
+}
+.thr3{
+  background-color:green;
+}
+.thr4{
+  background-color:yellow;
+}
