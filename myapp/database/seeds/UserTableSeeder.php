@@ -11,15 +11,28 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        //
+        // for($i=1;$i<=10;$i++){
+        //     DB::table('users')->insert([
+        //         'name'=>'user'.$i,
+        //         'email'=>'test'.$i.'@example.com',
+        //         'password'=>Hash::make('12345678')
+        //     ]);
+        // }
+
+        DB::table('users')->insert([
+            'name'=>'oresama',
+            'email'=>'test@example.com',
+            'password'=>Hash::make('myapp1504')
+        ]);
         
-        for($i=1;$i<=3;$i++){
+        for($i=1;$i<=1;$i++){
             DB::table('users')->insert([
-                'name'=>'user'.$i,
+                'name'=>'simobe'.$i,
                 'email'=>'test'.$i.'@example.com',
-                'password'=>Hash::make('12345678')
+                'password'=>Hash::make('myapp1504')
             ]);
         }
-
 
     }
 }
